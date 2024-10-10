@@ -29,7 +29,8 @@ app.post('/instagram', async (req, res) => {
         // Log the result
         console.log('Is Taken:', isTaken);
 
-        // Send the response with the availability status
+        console.log(response);
+        console.log(response.data);
         return res.status(200).send(isTaken); // Send boolean response
     } catch (error) {
         console.error('Error fetching data from Instagram:', error.message);
