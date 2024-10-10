@@ -24,7 +24,7 @@ app.post('/instagram', async (req, res) => {
         const response = await axios.get(`https://www.instagram.com/${username}/?__a=1`);
 
         // Check if the response contains the specific meta tag
-        const isTaken = response.data.includes(`<meta property="og:type" content="profile" />`);
+        const isTaken = response.data.includes(`<meta property="og:type" content="profile" />`) || response.data.includes(`<meta property="og:type" content="profile"/>`);
 
         // Log the result
         console.log('Is Taken:', isTaken);
